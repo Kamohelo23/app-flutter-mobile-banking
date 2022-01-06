@@ -79,15 +79,3 @@ List transactions = [
   },
 
 ];
-
-
-List cardInfo = [
-{
-"cardID" : "27392",
-"balance" : "R100 000",
-"type" : "Business Account",
-"date" : "03/28",
-"holder" : "Winchester Branch",
-"cvv" : "253",
-},
-];

@@ -1,16 +1,23 @@
 import 'package:flutter/material.dart';
 
 const primary = Colors.black;
+const primary1 = Color(0xFF1C1C1C);
+const primary3 = Color(0xFF232323);
+const primary2 = Color(0xFFE5E5E5);
 const secondary = Colors.white;
-const mainColor = Color(0xFF000000);
-const appBgColor = Colors.white;
+const mainColor = Color(0xFF181919);
+//const appBgColor = Color(0xFF1F1E1E);
+const appBgColor = Color(0xFF181919);
 const appBgColorPrimary = Color(0xFF7c62fe);
 const appBgColorSecondary = Color(0xFF7ec1fe);
 const bottomBarColor = Colors.white;
 const inActiveIcon = Color(0xFFABBEEC);
-const shadowColor = Colors.black87;
+const shadowColor = Color(0xFF4F4F4F);
 const yellow = Color(0xFFffcb66);
 const green = Color(0xFFb2e1b5);
 const pink = Color(0xFFf5bde8);
 const purple = Color(0xFFd9bcff);
 const red = Color(0xFFef5013);
+const turc = Color(0xFF2E9E95);
+const iconCol = Color(0xFF2255A5);
+const grey = Color(0xFF262734);

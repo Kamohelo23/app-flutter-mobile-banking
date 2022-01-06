@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
      return 
       Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: appBgColor,
         // appBar: getAppBar(),
         body: getBody(),
       );
@@ -30,44 +30,66 @@ class _HomePageState extends State<HomePage> {
   getAppBar(){
     return
       Container(
-            height: 130,
-            padding: EdgeInsets.only(left: 20, right: 20, top: 35),
+            height: 110,
+            padding: EdgeInsets.only(left: 1, right: 20, top: 55),
             decoration: BoxDecoration(
               color: appBgColor,
-              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(40), bottomRight: Radius.circular(40)),
+              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(1), bottomRight: Radius.circular(1)),
               boxShadow: [
-                BoxShadow(
-                  color: shadowColor.withOpacity(0.1),
-                  blurRadius: .5,
-                  spreadRadius: .5,
-                  offset: Offset(0, 1)
-                )
+                // BoxShadow(
+                //   color: shadowColor.withOpacity(0.5),
+                //   blurRadius: .1,
+                //   spreadRadius: .5,
+                //   offset: Offset(0, 2)
+                // )
               ]
             ),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                AvatarImage(profile, isSVG: false, width: 35, height: 35),
-                SizedBox(width: 15,),
-                Expanded(
-                  child: Container(
-                    alignment: Alignment.centerLeft,
-                    // color: Colors.red,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Hello Sangvaleap,", style: TextStyle(color: Colors.grey, fontSize: 13),),
-                        SizedBox(height: 5,),
-                        Text("Welcome Back!", style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17),),
-                      ],
-                    ),
-                  )
-                ),
-                SizedBox(width: 15,),
                 Container(
-                  padding: EdgeInsets.all(5),
+                  padding: EdgeInsets.all(9),
+                  // decoration: BoxDecoration(
+                  //   color: Colors.white,
+                  //   shape: BoxShape.circle,
+                  //   boxShadow: [
+                  //     BoxShadow(
+                  //       color: Colors.grey.withOpacity(0.2),
+                  //       spreadRadius: 1,
+                  //       blurRadius: 1,
+                  //       offset: Offset(1, 1), // changes position of shadow
+                  //     ),
+                  //   ],
+                  // ),
+                  // child: Icon(Icons.notifications_rounded)
+
+
+
+                      child: Icon(Icons.shield_outlined, color: iconCol
+                      ,size: 35,),
+
+                ),
+                SizedBox(width: 100,),
+                AvatarImage(profile, isSVG: false, width: 45, height: 45),
+                SizedBox(width: 100,),
+                // Expanded(
+                //   child: Container(
+                //     alignment: Alignment.centerLeft,
+                //     // color: Colors.red,
+                //     child: Column(
+                //       mainAxisAlignment: MainAxisAlignment.center,
+                //       crossAxisAlignment: CrossAxisAlignment.start,
+                //       children: [
+                //         Text("Hello Kamohelo,", style: TextStyle(color: Colors.black, fontSize: 13),),
+                //         SizedBox(height: 5,),
+                //         Text("Welcome Back!", style: TextStyle(color: Colors.black54, fontWeight: FontWeight.w600, fontSize: 17),),
+                //       ],
+                //     ),
+                //   )
+                // ),
+                Container(
+                  padding: EdgeInsets.all(3),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     shape: BoxShape.circle,
@@ -85,7 +107,7 @@ class _HomePageState extends State<HomePage> {
                     padding: EdgeInsets.all(3),
                     position: BadgePosition.topEnd(top: -5, end: 2),
                     badgeContent: Text('', style: TextStyle(color: Colors.white),),
-                    child: Icon(Icons.notifications_rounded)
+                    child: Icon(Icons.notifications_rounded, color: iconCol,size: 25,)
                   ),
                 ),
               ],
@@ -99,56 +121,97 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         children: [
           getAppBar(),
-          SizedBox(height: 25,),
+
+          SizedBox(height: 29,),
+          Container(
+              padding: EdgeInsets.only(left: 20, right: 15),
+              alignment: Alignment.centerLeft,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Card Vault", style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600, color: Colors.white),),
+                ],
+              )
+          ),
+          SizedBox(height: 5,),
+
+          Container(
+              padding: EdgeInsets.only(left: 20, right: 15),
+              alignment: Alignment.centerLeft,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Welcome back, Kamohelo.", style: TextStyle(fontSize: 12, color: Colors.white, fontWeight: FontWeight.w300,),),
+                ],
+              )
+          ),
+          SizedBox(
+            height: 10.0,
+          ),
           Padding(
             padding: const EdgeInsets.only(left: 15, right: 15),
             child: Stack(
+
               clipBehavior: Clip.none,
               children: [
                 BalanceCard(),
-                Positioned(
-                  top: 100,
-                  left: 0, right: 0,
-                  child: Container(
-                    padding: EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                      color: secondary,
-                      shape: BoxShape.circle,
-                      border: Border.all()
-                    ),
-                    child: Icon(Icons.add)
-                  )
-                )
+                // Positioned(
+                //   top: 100,
+                //   left: 0, right: 0,
+                //   child: Container(
+                //     padding: EdgeInsets.all(5),
+                //     decoration: BoxDecoration(
+                //       color: secondary,
+                //       shape: BoxShape.circle,
+                //       border: Border.all()
+                //     ),
+                //     child: Icon(Icons.add)
+                //   )
+                // )
             ],
             )
           ),
+          // Positioned(
+          //     top: 100,
+          //     left: 0, right: 100,
+          //
+          //     child: Container(
+          //         padding: EdgeInsets.all(5),
+          //         decoration: BoxDecoration(
+          //             color: secondary,
+          //             shape: BoxShape.circle,
+          //             border: Border.all()
+          //         ),
+          //         child: Icon(Icons.arrow_forward)
+          //     )
+          // ),
           SizedBox(height: 35,),
-          getActions(),
-          SizedBox(height: 25,),
-          Container(
-            padding: EdgeInsets.only(left: 20),
-            alignment: Alignment.centerLeft,
-            child: Text("Send Again", 
-            style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),)
-          ),
-          SizedBox(height: 15,),
-          Padding(padding: EdgeInsets.only(left: 15),
-            child: getRecentUsers(),
-          ),
-          SizedBox(height: 25,),
+          //getActions(),
+          //SizedBox(height: 25,),
+          // Container(
+          //   padding: EdgeInsets.only(left: 20),
+          //   alignment: Alignment.centerLeft,
+          //   child: Text("Send Again",
+          //   style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),)
+          // ),
+          // SizedBox(height: 15,),
+          // Padding(padding: EdgeInsets.only(left: 15),
+          //   child: getRecentUsers(),
+          // ),
+          // SizedBox(height: 25,),
           Container(
             padding: EdgeInsets.only(left: 20, right: 15),
             alignment: Alignment.centerLeft,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Transactions", style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),),
-                Expanded(
-                  child: Container(
-                    alignment: Alignment.centerRight,
-                    child: Text("Today", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),))
-                ),
-                Icon(Icons.expand_more_rounded),
+                Text("History", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: Colors.white),),
+                // Expanded(
+                //   child: Container(
+                //     alignment: Alignment.centerRight,
+                //     child: Text("Today", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),))
+                // ),
+                // Icon(Icons.expand_more_rounded),
               ],
             )
           ),
@@ -156,6 +219,7 @@ class _HomePageState extends State<HomePage> {
           Padding(padding: EdgeInsets.only(left: 15),
             child: getTransanctions(),
           ),
+
         ],
       ),
     );
